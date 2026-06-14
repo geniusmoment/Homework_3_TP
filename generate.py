@@ -6,7 +6,7 @@ import sys
 NUM_ROWS = 67
 
 
-COLUMNS = ["EGE_po_russkomu", "FACEIT_level", "EGE_po_matematike", "Uroven_englisha"]
+COLUMNS = ["EGE_po_russkomu", "FACEIT_level", "EGE_po_matematike", "English_level"]
 
 def generate_row():
 
@@ -14,7 +14,7 @@ def generate_row():
         "EGE_po_russkomu": random.randint(0, 100),
         "FACEIT_level": round(random.uniform(1.5, 9.9), 2),
         "EGE_po_matematike": random.randint(0, 100),
-        "Uroven_englisha": random.choice(["A", "B", "C"]),
+        "English_level": random.choice(["A", "B", "C"]),
     }
 
 OUTPUT_DIR = sys.argv[1] if len(sys.argv) > 1 else "/data"

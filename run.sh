@@ -17,6 +17,14 @@ elif [ "$1" == "build_reporter" ]; then
 elif [ "$1" == "run_reporter" ]; then
   mkdir -p data
   docker run --rm -v "$(pwd)/data:/data" reporter
+elif [ "$1" == "structure" ]; then
+  find . 
+elif [ "$1" == "clear_data" ]; then
+  rm -rf data
+elif [ "$1" == "inside_generator" ]; then
+  docker run --rm -v "$(pwd)/data:/data" generator ls -la /data
+elif [ "$1" == "inside_reporter" ]; then
+  docker run --rm -v "$(pwd)/data:/data" reporter ls -la /data
 else
   echo "Unknown command"
   exit 1
